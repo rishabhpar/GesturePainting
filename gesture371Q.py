@@ -3,14 +3,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-######### BRAINSTORM ##########
-#  we start with a simple mouse countroller with opencv.
-#  we can use fingers, no color-segmentation bs, and separated fingers 
-#  means it's in "pointer" mode, and fingers put together
-#  means we are in the "click&drag" mode.
-#
-#  We can get this working with Skribbl.io and no need for gestures 
-#  to change colors; you just have to pinch over the color you want
-#
-#  From there, we can add out own gestures for shortcuts in the game
-#  ex: swiping to clean to board, etc. etc
+############ Le Plan ################
+# 2 image streams
+# RGB Stream and Depth Stream
+
+# Depth -> find pointer finger 
+
+
+# Step 0: How to read camera input (librealsense on github for the SDK)
+#    https://github.com/IntelRealSense/librealsense/tree/master/wrappers/python
+# Step 1: Convert depth image to numpy array and process using thresholding
+# Step 2: Get moving cursor using camera
+# Step 3: Calibrate drawing frame -> only for the plane at which you draw. You CAN'T stick your finger into the plane, otherwise you mess up the geometry.
+# Step 4: Using RGB and polyfit the different number of fingers to get colors (Lindia and Rish)
+# Step 5: Implement gestures with a library  (Lindia and Rish)
+# Step 6: Improve drawing GUI
+# Step 7: Report using LaTeX
+
+
+# Step 0thru3 by Nov 10
+# Step 4and5 by Nov 10
+# Step 6and7 starting Nov 17 til Dec 2
+
