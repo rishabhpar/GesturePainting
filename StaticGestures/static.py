@@ -26,6 +26,14 @@ import matplotlib.pyplot as plt
 # 3. train model with the gajjilion images from kaggle
 # 4. use model to predict which class of gesture the extract cv image belongs to 
 
+
+# 0. threshold kaggle images
+# 1. find your hand
+# 2. draw a rectangle
+# 3. crop that rectangle
+# 4. background subtraction
+# 5. threshold
+
 def crop_image(image, x, y, width, height):
     return image[y:y + height, x:x + width]
 
