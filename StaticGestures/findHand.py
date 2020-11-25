@@ -113,8 +113,10 @@ while camera.isOpened():
             cv2.drawContours(drawing, [res], 0, (0, 255, 0), 2)
             cv2.drawContours(drawing, [hull], 0, (0, 0, 255), 3)
 
-            if count == 0:
-                isFinishCal,cnt = calculateFingers(res, drawing)                    
+            if count == 14:
+                isFinishCal,cnt = calculateFingers(res, drawing)
+                if ((cv2.contourArea(hull) - cv2.contourArea(res)) / cv2.contourArea(res)) * 100 < 12:
+                    cnt = 0                    
                 print("There are this many fingers: " + str(cnt)) # <------------- THE ANSWER
                 cv2.imshow('output', drawing)
             
